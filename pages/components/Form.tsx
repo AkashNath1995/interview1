@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styles from '../../styles/Form.module.css';
 
 const Form = () => {
+  // State variables for form fields and error messages
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,6 +12,7 @@ const Form = () => {
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
+  // Form submission handler
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
@@ -30,35 +32,34 @@ const Form = () => {
     }
   };
 
- const validateEmail = (email) => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Ensure email contains @ and .
+  // Email validation function
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Ensure email contains @ and .
 
-  // Extract and return domain part if email is valid
-  if (regex.test(email)) {
-    const domainPart = email.split('@')[1];
+    // Extract and return domain part if email is valid
+    if (regex.test(email)) {
+      const domainPart = email.split('@')[1];
 
-    // Check for a valid top-level domain (TLD)
-    const tldRegex = /^[a-zA-Z]{2,}$/; // Modify this regex based on your TLD requirements
-    const isValidTld = tldRegex.test(domainPart.split('.')[1]);
+      // Check for a valid top-level domain (TLD)
+      const tldRegex = /^[a-zA-Z]{2,}$/; // Modify this regex based on your TLD requirements
+      const isValidTld = tldRegex.test(domainPart.split('.')[1]);
 
-    // Check for valid characters in the domain name (no spaces or special characters other than dots)
-    const domainName = domainPart.split('.')[0];
-    const invalidCharacters = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '{', '}', '[', ']'];
-    const hasInvalidCharacters = invalidCharacters.some((character) => domainName.includes(character));
+      // Check for valid characters in the domain name (no spaces or special characters other than dots)
+      const domainName = domainPart.split('.')[0];
+      const invalidCharacters = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '{', '}', '[', ']'];
+      const hasInvalidCharacters = invalidCharacters.some((character) => domainName.includes(character));
 
-    if (isValidTld && !hasInvalidCharacters) {
-      return domainPart;
+      if (isValidTld && !hasInvalidCharacters) {
+        return domainPart;
+      } else {
+        return false; // Indicate invalid email
+      }
     } else {
       return false; // Indicate invalid email
     }
-  } else {
-    return false; // Indicate invalid email
-  }
-};
+  };
 
-
-
-
+  // Username validation function
   const validateUsername = (username) => {
     const regex = /^[a-zA-Z0-9]+$/; // Ensure username is alphanumeric
 
@@ -80,17 +81,20 @@ const Form = () => {
     return regex.test(username);
   };
 
-
+  // Password validation function
   const validatePassword = (password) => {
     // Password must have 1 capital letter, 1 special character, and 1 number
     const regex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9]).*$/;
     return regex.test(password);
   };
 
+  // JSX structure for the form component
   return (
     <aside className={styles['form-container']}>
       <form className={styles.form} onSubmit={handleFormSubmit}>
         <h1>Login Form</h1>
+
+        {/* Username input */}
         <label className={styles['form-label']}>Username:</label>
         <input
           className={styles['form-input']}
@@ -100,6 +104,7 @@ const Form = () => {
         />
         {usernameError && <p className={styles.error}>{usernameError}</p>}
 
+        {/* Email input */}
         <label className={styles['form-label']}>Email:</label>
         <input
           className={styles['form-input']}
@@ -109,6 +114,7 @@ const Form = () => {
         />
         {emailError && <p className={styles.error}>{emailError}</p>}
 
+        {/* Password input */}
         <label className={styles['form-label']}>Password:</label>
         <input
           className={styles['form-input']}
@@ -118,6 +124,7 @@ const Form = () => {
         />
         {passwordError && <p className={styles.error}>{passwordError}</p>}
 
+        {/* Submit button */}
         <button className={styles['form-button']} type="submit">
           Submit
         </button>
@@ -127,3 +134,4 @@ const Form = () => {
 };
 
 export default Form;
+
