@@ -1,15 +1,15 @@
-/* styles/Form.module.css */
+/* Form.module.css */
 
+/* Container for the entire form, centered on the screen */
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width:100vw;
+  width: 100vw;
 }
 
-/* styles/Form.module.css */
-
+/* Form styling */
 .form {
   font-family: 'Hedvig Letters Serif', sans-serif;
   display: flex;
@@ -22,15 +22,14 @@
   border-radius: 8px;
 }
 
-
-/* styles/Form.module.css */
-
+/* Label styling within the form */
 .form-label {
   font-size: 1.3em; /* Slightly increased font size */
   margin-bottom: 12px; /* Reduced margin for a more compact look */
   color: #333; /* Darker text color */
 }
 
+/* Input field styling within the form */
 .form-input {
   padding: 12px; /* Slightly reduced padding for a more balanced appearance */
   width: 100%;
@@ -42,12 +41,12 @@
   transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
+/* Input field focus styling */
 .form-input:focus {
   border-color: #2980b9; /* Change border color on focus */
 }
 
-/* styles/Form.module.css */
-
+/* Button styling within the form */
 .form-button {
   padding: 15px;
   border: none; /* Remove border for a cleaner look */
@@ -59,13 +58,12 @@
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
+/* Button hover effect */
 .form-button:hover {
   background-color: #27ae60; /* Darker green on hover */
 }
 
-
-/* styles/Form.module.css */
-
+/* Error message styling */
 .error {
   color: #e74c3c; /* Red color */
   font-size: 0.9em;
@@ -76,7 +74,7 @@
   border-radius: 5px; /* Rounded corners */
 }
 
-
+/* Responsive styling for smaller screens */
 @media (max-width: 768px) {
   .form {
     width: 100%; /* Make the form full-width on smaller screens */
