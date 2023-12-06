@@ -1,5 +1,6 @@
-/* styles/Header.module.css */
+/* Header.module.css */
 
+/* Header styling with gradient background and padding */
 .header {
   display: flex;
   align-items: center;
@@ -9,6 +10,7 @@
   width: 97vw;
 }
 
+/* Styling for the logo with border-radius and box-shadow */
 .logo {
   height: 50px;
   width: auto;
@@ -24,6 +26,7 @@
   transform: scale(1.05);
 }
 
+/* Navigation container styling with flex and margin adjustments */
 .nav-container {
   display: flex;
   gap: 1rem;
@@ -31,12 +34,13 @@
   margin-left: auto; /* Move the nav container to the right side of the header */
 }
 
-/* Use a local class for nav */
+/* Local navigation styling with flex and alignment */
 .local-nav {
   display: flex;
   align-items: center;
 }
 
+/* Styling for navigation links with padding, color, and hover effect */
 .local-nav a {
   padding: 10px;
   text-decoration: none;
@@ -44,13 +48,15 @@
   transition: background-color 0.3s ease;
 }
 
+/* Hover effect for navigation links: Light gray background on hover */
 .local-nav a:hover {
   background-color: #f0f0f0; /* Light gray on hover for better visibility */
 }
 
 /* Media queries for tablet and mobile responsiveness */
 @media (max-width: 768px) {
-  
+  /* Add responsive styles here if needed */
 }
+
 
 
