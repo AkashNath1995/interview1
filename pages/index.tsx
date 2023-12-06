@@ -10,10 +10,7 @@ const Home = () => {
         <title>React Next.js App</title>
       </Head>
       <Header />
-      <Layout>
-        {/* Your page content */}
-        <h1>Welcome to the Home Page</h1>
-      </Layout>
+      <Layout />
     </div>
   );
 };
