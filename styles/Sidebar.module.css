@@ -1,16 +1,14 @@
-
-/* Overall container */
+/* Overall container styling */
 .container {
   display: flex;
   height: 100vh;
   overflow: hidden; /* Hide overflowing content within the container */
 }
 
-
-/* Sidebar */
+/* Sidebar styling */
 .sidebar {
   width: 250px;
-   background: #265073; /* Gradient from light blue to sky blue */
+  background: #265073; /* Gradient from light blue to sky blue */
   color: #fff; /* White text */
   padding: 20px;
   display: flex;
@@ -18,8 +16,7 @@
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the sidebar */
 }
 
-
-/* Local navigation */
+/* Local navigation styling */
 .local-nav {
   display: flex; /* Add flex display to the .local-nav container */
   flex-direction: column; /* Arrange navigation links vertically */
@@ -35,11 +32,11 @@
 }
 
 .local-nav a:hover {
-   background-color: #f0d87a; /* Darker bluish background on hover */
-  color:#000;
+  background-color: #f0d87a; /* Darker bluish background on hover */
+  color: #000; /* Dark text on hover */
 }
 
-/* Search form */
+/* Search form styling */
 .searchForm {
   display: flex;
   width: 100%;
@@ -49,7 +46,7 @@
 
 .searchForm input,
 .searchForm button {
-  border:none;
+  border: none;
   padding: 12px;
   background-color: #ecf0f1; /* Background color - Light grayish blue */
   color: #555; /* Text color - Dark gray */
@@ -58,7 +55,7 @@
 /* Adjusted width considering padding on both sides */
 .searchForm input {
   width: calc(100% - 2 * 12px); /* Account for padding on both sides */
-  border:none;
+  border: none;
   border-radius: 4px; /* Add slight border-radius for a softer look */
 }
 
@@ -66,7 +63,7 @@
   cursor: pointer; /* Indicate clickable action */
   transition: background-color 0.3s ease; /* Smooth transition on hover */
   border-radius: 4px; /* Add slight border-radius for a softer look */
-  margin-left:4px;
+  margin-left: 4px;
 }
 
 .searchForm button:hover {
@@ -74,24 +71,22 @@
   color: #fff; /* Text color on hover - White */
 }
 
+/* Toggle button styling */
 .toggleButton {
   display: none; /* Initially hide the toggle button */
 }
 
-.showSidebar {
-  transform: translateX(0);
-}
-
+/* Show the toggle button on smaller screens */
 @media (max-width: 760px) {
   .toggleButton {
-    display: block; /* Show the toggle button on smaller screens */
-    cursor:pointer;
-    margin-bottom:2px;
-    color:#8ACDD7;
-    font-weight:bolder;
-    
+    display: block;
+    cursor: pointer;
+    margin-bottom: 2px;
+    color: #8ACDD7;
+    font-weight: bolder;
   }
 
+  /* Sidebar styling for smaller screens */
   .sidebar {
     width: 100%; /* Set the width to 100% to cover the entire screen */
     transform: translateX(-100%); /* Initially hide the sidebar off-screen */
@@ -103,7 +98,8 @@
     z-index: 999; /* Ensure the sidebar appears above other content */
   }
 
+  /* Show the sidebar on smaller screens */
   .showSidebar {
-    transform: translateX(0); /* Move the sidebar into view */
+    transform: translateX(0);
   }
 }
