@@ -1,0 +1,56 @@
+/* styles/Header.module.css */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #9AD0C2; /* Gradient from light to deep Dodger Blue */
+  padding: 20px;
+  width: 97vw;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+  background-color: #fff; /* White */
+}
+
+/* Hover effect: Enlarge the logo slightly on hover */
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-container {
+  display: flex;
+  gap: 1rem;
+  /* Add some additional styling */
+  margin-left: auto; /* Move the nav container to the right side of the header */
+}
+
+/* Use a local class for nav */
+.local-nav {
+  display: flex;
+  align-items: center;
+}
+
+.local-nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: #333; /* Slightly darker gray for better contrast */
+  transition: background-color 0.3s ease;
+}
+
+.local-nav a:hover {
+  background-color: #f0f0f0; /* Light gray on hover for better visibility */
+}
+
+/* Media queries for tablet and mobile responsiveness */
+@media (max-width: 768px) {
+  
+}
+
+

@@ -1,0 +1,8 @@
+/* styles/Layout.module.css */
+.container {
+  display: flex;
+  height:100vh;
+  width:100vw;
+  justify-content:center;
+  align-items:center;
+}
