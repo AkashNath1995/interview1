@@ -30,17 +30,32 @@ const Form = () => {
     }
   };
 
-  const validateEmail = (email) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Ensure email contains @ and .
+ const validateEmail = (email) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Ensure email contains @ and .
 
-    // Extract and return domain part if email is valid
-    if (regex.test(email)) {
-      const domainPart = email.split('@')[1];
+  // Extract and return domain part if email is valid
+  if (regex.test(email)) {
+    const domainPart = email.split('@')[1];
+
+    // Check for a valid top-level domain (TLD)
+    const tldRegex = /^[a-zA-Z]{2,}$/; // Modify this regex based on your TLD requirements
+    const isValidTld = tldRegex.test(domainPart.split('.')[1]);
+
+    // Check for valid characters in the domain name (no spaces or special characters other than dots)
+    const domainName = domainPart.split('.')[0];
+    const invalidCharacters = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '{', '}', '[', ']'];
+    const hasInvalidCharacters = invalidCharacters.some((character) => domainName.includes(character));
+
+    if (isValidTld && !hasInvalidCharacters) {
       return domainPart;
     } else {
       return false; // Indicate invalid email
     }
-  };
+  } else {
+    return false; // Indicate invalid email
+  }
+};
+
 
 
 
